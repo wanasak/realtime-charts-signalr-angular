@@ -54,7 +54,7 @@ namespace RealTimeCharts_Server
             }
 
             app.UseHttpsRedirection();
-            app.UseCors();
+            app.UseCors("CorsPolicy");
 
             app.UseSignalR(routes =>
             {
