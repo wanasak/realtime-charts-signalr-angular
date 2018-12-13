@@ -39,10 +39,13 @@ export class AppComponent implements OnInit {
   ngOnInit() {
     this.signalRService.startConnection();
     this.signalRService.addTransferChartDataListener();
+    this.signalRService.addBroadcastChartDataListener();
     this.startHttpRequest();
   }
 
-  chartClick(event) {}
+  chartClick() {
+    this.signalRService.broadcastChartData();
+  }
 
   private startHttpRequest(): any {
     this.http
